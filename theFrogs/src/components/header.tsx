@@ -15,6 +15,11 @@ export const Header = () => {
             <Link to="/contact">Contact us</Link>
           </li>
         </ul>
+        <div>
+          <input type="search" name="q" />
+          <div></div>
+          <div className="close-search">x</div>
+        </div>
       </nav>
     </header>
   );
