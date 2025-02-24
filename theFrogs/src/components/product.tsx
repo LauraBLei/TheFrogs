@@ -1,5 +1,7 @@
+import { ShoppingCart } from "lucide-react";
 import { Product } from "../types/product";
 import StarRating from "./rating";
+import { PriceDisplay } from "./price";
 
 interface ProductCardProps {
   product: Product;
@@ -7,23 +9,30 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <div className="max-h-[150px]  flex max-w-[500px]">
-      <div className="overflow-hidden max-w-[160px]">
+    <div className="max-h-[200px] lg:max-h-[170px] bg-[#333] flex lg:max-w-[500px] w-full mt-4 drop-shadow-xl">
+      <div className="overflow-hidden w-[210px] lg:w-[250px] ">
         <img
-          className="object-cover"
+          className="object-cover w-full h-full"
           src={product.image.url}
           alt={product.image.alt}
         />
       </div>
-      <div>
-        <h2 className="text-lg">{product.title}</h2>
-        <p className="text-sm">{product.description}</p>
+      <div className="flex flex-col px-2 justify-evenly w-full">
+        <h2 className="text-lg text-white">{product.title}</h2>
+        <p className="text-sm text-white">{product.description}</p>
         <div>
           <StarRating rating={product.rating} />
         </div>
-        <div className="flex gap-4">
-          <div>price</div>
-          <div>Cart icon</div>
+        <div className="flex justify-between w-full">
+          <div>
+            <PriceDisplay
+              price={product.price}
+              discountedPrice={product.discountedPrice}
+            />
+          </div>
+          <div>
+            <ShoppingCart className="w-8 h-8 text-white cursor-pointer scale-95 hover:scale-100 transition ease-in-out duration-300 transform" />
+          </div>
         </div>
       </div>
     </div>

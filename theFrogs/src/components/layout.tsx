@@ -3,8 +3,8 @@ import { Header } from "./header";
 
 export const Layout = () => {
   return (
-    <div className="flex justify-center w-full">
-      <div className="max-w-[1200px] w-full">
+    <div className="flex justify-center w-full bg-[#B98CF9]">
+      <div className=" w-full">
         <Header />
         <main>
           <Outlet />

@@ -7,38 +7,54 @@ export const HomePage = () => {
   console.log("home", products);
 
   return (
-    <div>
-      <div className="flex justify-center gap-10 my-5">
+    <div className="flex flex-col items-center">
+      <div className="flex justify-center gap-10 my-5 py-10 shadow-xl bg-[#333] w-full">
         <div className="flex flex-col items-center justify-center gap-2">
-          <div className="bg-black w-[130px] h-[130px] rounded-full">
-            {/* <img src="" alt="" /> */}
+          <div className="bg-black w-[130px] h-[130px] rounded-full overflow-hidden">
+            <img
+              className="object-cover w-full h-full"
+              src="./electronics.png"
+              alt=""
+            />
           </div>
-          <p>Electronics</p>
+          <p className="text-[#F5F5F5] text-lg">Electronics</p>
         </div>
         <div className="flex flex-col items-center justify-center gap-2">
-          <div className="bg-black w-[130px] h-[130px] rounded-full">
-            {/* <img src="" alt="" /> */}
+          <div className="bg-black w-[130px] h-[130px] rounded-full overflow-hidden">
+            <img
+              className="object-cover w-full h-full"
+              src="./fashion.png"
+              alt=""
+            />
           </div>
-          <p>Fashion</p>
+          <p className="text-[#F5F5F5] text-lg">Fashion</p>
         </div>
         <div className="flex flex-col items-center justify-center gap-2">
-          <div className="bg-black w-[130px] h-[130px] rounded-full">
-            {/* <img src="" alt="" /> */}
+          <div className="bg-black w-[130px] h-[130px] rounded-full overflow-hidden">
+            <img
+              className="object-cover w-full h-full"
+              src="./Beauty.png"
+              alt=""
+            />
           </div>
-          <p>Beauty</p>
+          <p className="text-[#F5F5F5] text-lg">Beauty</p>
         </div>
         <div className="flex flex-col items-center justify-center gap-2">
-          <div className="bg-black w-[130px] h-[130px] rounded-full">
-            {/* <img src="" alt="" /> */}
+          <div className="bg-black w-[130px] h-[130px] rounded-full overflow-hidden">
+            <img
+              className="object-cover w-full h-full"
+              src="./Toys.png"
+              alt=""
+            />
           </div>
-          <p>Toys</p>
+          <p className="text-[#F5F5F5] text-lg">Toys</p>
         </div>
       </div>
-      <details className="w-full relative ">
-        <summary className="w-full cursor-pointer text-2xl font-bold ">
+      <details className="w-full relative max-w-[1100px] group ">
+        <summary className="w-full cursor-pointer text-2xl font-bold hover:bg-[#333333] hover:text-[#F5F5F5] p-2 group-open:bg-[#333333] group-open:text-[#F5F5F5]">
           Categories
         </summary>
-        <div className="flex w-full absolute md:justify-between md:flex-nowrap gap-2 flex-wrap justify-center ">
+        <div className="z-50  bg-[#F5F5F5] p-2 flex w-full absolute md:justify-between md:flex-nowrap gap-2 flex-wrap justify-center ">
           <div className="sm:max-w-[250px] w-full">
             <p className="text-2xl border-b-2 border-black px-4 w-full">
               Electronics
@@ -84,7 +100,7 @@ export const HomePage = () => {
           </div>
         </div>
       </details>
-      <div>
+      <div className="flex md:justify-between flex-wrap w-full max-w-[1100px]">
         {products.map((product) => (
           <ProductCard product={product} />
         ))}

@@ -1,4 +1,4 @@
-import { RailSymbol, Star, StarHalf, Star as StarOutline } from "lucide-react";
+import { Star, StarHalf, Star as StarOutline } from "lucide-react";
 
 interface StarRatingProps {
   rating: number;
@@ -11,7 +11,7 @@ export const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
   const emptyStars = maxStars - fullStars - (hasHalfStar ? 1 : 0);
 
   return (
-    <div className="flex gap-1 text-yellow-400">
+    <div className="flex gap-1 text-[#F5F5F5]">
       {/* Full Stars */}
       {Array(fullStars)
         .fill(0)
