@@ -17,7 +17,6 @@ export const Header = () => {
         </ul>
         <div>
           <input type="search" name="q" />
-          <div></div>
           <div className="close-search">x</div>
         </div>
       </nav>

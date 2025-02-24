@@ -1,28 +1,35 @@
+import { useContext } from "react";
+import { ProductsContext } from "../types/product";
+import { ProductCard } from "../components/product";
+
 export const HomePage = () => {
+  const { products } = useContext(ProductsContext);
+  console.log("home", products);
+
   return (
     <div>
       <div className="flex justify-center gap-10 my-5">
         <div className="flex flex-col items-center justify-center gap-2">
           <div className="bg-black w-[130px] h-[130px] rounded-full">
-            <img src="" alt="" />
+            {/* <img src="" alt="" /> */}
           </div>
           <p>Electronics</p>
         </div>
         <div className="flex flex-col items-center justify-center gap-2">
           <div className="bg-black w-[130px] h-[130px] rounded-full">
-            <img src="" alt="" />
+            {/* <img src="" alt="" /> */}
           </div>
           <p>Fashion</p>
         </div>
         <div className="flex flex-col items-center justify-center gap-2">
           <div className="bg-black w-[130px] h-[130px] rounded-full">
-            <img src="" alt="" />
+            {/* <img src="" alt="" /> */}
           </div>
           <p>Beauty</p>
         </div>
         <div className="flex flex-col items-center justify-center gap-2">
           <div className="bg-black w-[130px] h-[130px] rounded-full">
-            <img src="" alt="" />
+            {/* <img src="" alt="" /> */}
           </div>
           <p>Toys</p>
         </div>
@@ -77,7 +84,11 @@ export const HomePage = () => {
           </div>
         </div>
       </details>
-      <div></div>
+      <div>
+        {products.map((product) => (
+          <ProductCard product={product} />
+        ))}
+      </div>
     </div>
   );
 };
