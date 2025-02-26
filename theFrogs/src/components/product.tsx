@@ -9,8 +9,8 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <div className="max-h-[200px] lg:max-h-[170px] bg-[#333] flex lg:max-w-[500px] w-full mt-4 drop-shadow-xl">
-      <div className="overflow-hidden w-[210px] lg:w-[250px] ">
+    <div className="max-h-[200px] lg:max-h-[170px] bg-brand-black flex lg:max-w-[500px] w-full mt-4 drop-shadow-xl">
+      <div className="overflow-hidden w-[210px] lg:w-[250px]">
         <img
           className="object-cover w-full h-full"
           src={product.image.url}
