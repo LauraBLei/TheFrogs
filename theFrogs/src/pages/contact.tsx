@@ -70,6 +70,9 @@ export const ContactPage = () => {
                 <label htmlFor="">Description</label>
                 <textarea className="h-[200px] border-2 p-2 w-full border-brand-black"></textarea>
               </div>
+              <button className="text-3xl" type="submit">
+                Send
+              </button>
             </form>
           </div>
         </details>

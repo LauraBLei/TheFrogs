@@ -4,7 +4,6 @@ import { ProductCard } from "../components/product";
 
 export const HomePage = () => {
   const { products } = useContext(ProductsContext);
-  console.log("home", products);
 
   return (
     <div className="flex flex-col items-center">
@@ -50,7 +49,7 @@ export const HomePage = () => {
           <p className="text-[#F5F5F5] text-lg">Toys</p>
         </div>
       </div>
-      <details className="w-full relative max-w-[1100px] group ">
+      <details className="w-full relative max-w-[1100px] group">
         <summary className="w-full cursor-pointer text-2xl font-bold hover:bg-[#333333] hover:text-[#F5F5F5] p-2 group-open:bg-[#333333] group-open:text-[#F5F5F5]">
           Categories
         </summary>

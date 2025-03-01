@@ -3,7 +3,7 @@ import { Header } from "./header";
 
 export const Layout = () => {
   return (
-    <div className="flex justify-center w-full bg-[#B98CF9]">
+    <div className="flex justify-center w-full ">
       <div className=" w-full">
         <Header />
         <main>

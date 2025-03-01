@@ -26,8 +26,11 @@ export type Review = {
 
 type ProductContextType = {
   products: Product[];
-
+  product: Product | null;
+  cart: Product[];
   setProducts: (input: Product[]) => void;
+  setProduct: (input: Product) => void;
+  setCart: (input: Product[]) => void;
 };
 
 export const ProductsContext = createContext<ProductContextType>(

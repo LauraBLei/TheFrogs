@@ -8,10 +8,10 @@ type ContextProviderProps = {
 
 export const ProductProvider = ({ children }: ContextProviderProps) => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [product, setProduct] = useState<Product | null>(null);
+  const [cart, setCart] = useState<Product[]>([]);
 
   useEffect(() => {
-    console.log("inside useeffect, products:", products);
-
     if (products.length === 0) {
       readProducts(setProducts);
     }
@@ -22,6 +22,10 @@ export const ProductProvider = ({ children }: ContextProviderProps) => {
       value={{
         products,
         setProducts,
+        product,
+        setProduct,
+        cart,
+        setCart,
       }}
     >
       {children}

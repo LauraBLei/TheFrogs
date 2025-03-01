@@ -1,20 +1,22 @@
 interface PriceDisplayProps {
   price: number;
   discountedPrice?: number;
+  styling: string;
 }
 
 export const PriceDisplay: React.FC<PriceDisplayProps> = ({
   price,
   discountedPrice,
+  styling,
 }) => {
   const hasDiscount = discountedPrice && discountedPrice < price;
 
   return (
-    <div className="flex items-center gap-2 text-lg font-semibold">
+    <div className="flex items-center justify-between gap-2 max-w-[350px] text-lg font-semibold">
       {hasDiscount ? (
         <>
-          <span className="text-white">{discountedPrice.toFixed(2)} NOK</span>
-          <span className="text-gray-400 line-through">
+          <span className={styling}>{discountedPrice.toFixed(2)} NOK</span>
+          <span className=" text-brand-white line-through">
             {price.toFixed(2)} NOK
           </span>
         </>
