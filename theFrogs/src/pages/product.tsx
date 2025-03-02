@@ -69,7 +69,7 @@ export const ProductPage = () => {
                     );
                   })
                   .map((product) => (
-                    <ProductCard product={product} />
+                    <ProductCard product={product} cartItem={false} />
                   ))}
               </div>
             </div>

@@ -1,4 +1,4 @@
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Square, SquareX } from "lucide-react";
 import { Product, ProductsContext } from "../types/product";
 import StarRating from "./rating";
 import { PriceDisplay } from "./price";
@@ -8,17 +8,37 @@ import { readProduct } from "../API/products";
 
 interface ProductCardProps {
   product: Product;
+  cartItem: boolean;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({
+  product,
+  cartItem,
+}) => {
   const { setProduct, setCart, cart } = useContext(ProductsContext);
   const handleOnClick = async () => {
     setProduct(await readProduct(product.id));
   };
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault(); // Prevents the Link from being triggered
-    setCart([...cart, product]);
-    console.log(cart);
+
+    // Check if the product is already in the cart
+    const isProductInCart = cart.some((item) => item.id === product.id);
+
+    if (!isProductInCart) {
+      setCart([...cart, product]);
+      console.log("Product added to cart:", product);
+    } else {
+      alert("Product is already in the cart");
+    }
+  };
+
+  const handleRemoveFromCart = (
+    e: React.MouseEvent,
+    productToRemove: Product
+  ) => {
+    e.preventDefault();
+    setCart(cart.filter((item) => item.id !== productToRemove.id));
   };
 
   return (
@@ -49,10 +69,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             />
           </div>
           <div>
-            <ShoppingCart
-              onClick={handleAddToCart}
-              className="w-8 h-8 text-white cursor-pointer scale-95 hover:scale-100 transition ease-in-out duration-300 transform"
-            />
+            {cartItem === false ? (
+              <ShoppingCart
+                onClick={handleAddToCart}
+                className="w-8 h-8 text-white cursor-pointer scale-95 hover:scale-100 transition ease-in-out duration-300 transform"
+              />
+            ) : (
+              <SquareX
+                onClick={(event) => handleRemoveFromCart(event, product)}
+                className="w-8 h-8 text-white cursor-pointer scale-95 hover:scale-100 transition ease-in-out duration-300 transform"
+              />
+            )}
           </div>
         </div>
       </div>
