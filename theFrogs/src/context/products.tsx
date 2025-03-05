@@ -8,8 +8,10 @@ type ContextProviderProps = {
 
 export const ProductProvider = ({ children }: ContextProviderProps) => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [search, setSearch] = useState<Product[]>([]);
   const [product, setProduct] = useState<Product | null>(null);
   const [cart, setCart] = useState<Product[]>([]);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
     if (products.length === 0) {
@@ -26,6 +28,10 @@ export const ProductProvider = ({ children }: ContextProviderProps) => {
         setProduct,
         cart,
         setCart,
+        isOpen,
+        setIsOpen,
+        search,
+        setSearch,
       }}
     >
       {children}

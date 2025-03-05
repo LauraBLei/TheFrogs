@@ -1,4 +1,4 @@
-import { ShoppingCart, Square, SquareX } from "lucide-react";
+import { ShoppingCart, SquareX } from "lucide-react";
 import { Product, ProductsContext } from "../types/product";
 import StarRating from "./rating";
 import { PriceDisplay } from "./price";
