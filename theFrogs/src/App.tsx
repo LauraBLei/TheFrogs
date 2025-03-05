@@ -7,20 +7,25 @@ import { CartPage } from "./pages/cart";
 import { ConfirmationPage } from "./pages/confirmation";
 import { AboutPage } from "./pages/about";
 import { Layout } from "./components/layout";
+import { ProductProvider } from "./context/products";
+import { SearchPage } from "./pages/search";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/product" element={<ProductPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/confirmation" element={<ConfirmationPage />} />
-          <Route path="/about" element={<AboutPage />} />
-        </Route>
-      </Routes>
+      <ProductProvider>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/product" element={<ProductPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/confirmation" element={<ConfirmationPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/search" element={<SearchPage />} />
+          </Route>
+        </Routes>
+      </ProductProvider>
     </BrowserRouter>
   );
 }

@@ -3,13 +3,13 @@ import { Header } from "./header";
 
 export const Layout = () => {
   return (
-    <body className="flex justify-center w-full">
-      <div className="max-w-[1200px] w-full">
+    <div className="flex justify-center w-full ">
+      <div className=" w-full">
         <Header />
         <main>
           <Outlet />
         </main>
       </div>
-    </body>
+    </div>
   );
 };
