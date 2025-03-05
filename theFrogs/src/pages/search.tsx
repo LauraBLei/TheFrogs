@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { ProductsContext } from "../types/product";
 import { ProductCard } from "../components/product";
-import { Divide } from "lucide-react";
 
 export const SearchPage = () => {
   const { search } = useContext(ProductsContext);
