@@ -4,7 +4,6 @@ import StarRating from "./rating";
 import { PriceDisplay } from "./price";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { readProduct } from "../API/products";
 
 interface ProductCardProps {
   product: Product;
@@ -15,10 +14,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   product,
   cartItem,
 }) => {
-  const { setProduct, setCart, cart } = useContext(ProductsContext);
-  const handleOnClick = async () => {
-    setProduct(await readProduct(product.id));
-  };
+  const { setCart, cart } = useContext(ProductsContext);
+
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault(); // Prevents the Link from being triggered
 
@@ -43,7 +40,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <Link
-      onClick={handleOnClick}
       to={{ pathname: "/product/", search: `?id=${product.id}` }}
       className="h-[200px] lg:h-[170px] bg-brand-black flex lg:max-w-[500px] w-full mt-4 drop-shadow-xl"
     >
