@@ -20,6 +20,18 @@ export const ProductPage = () => {
       setProduct(x);
     });
   }, []);
+  const handleAddToCart = (e: React.MouseEvent) => {
+    if (product) {
+      const isProductInCart = cart.some((item) => item.id === product.id);
+
+      if (!isProductInCart) {
+        setCart([...cart, product]);
+        console.log("Product added to cart:", product);
+      } else {
+        alert("Product is already in the cart");
+      }
+    }
+  };
   return (
     <div className="w-full flex justify-center h-auto">
       {product && (
@@ -44,7 +56,7 @@ export const ProductPage = () => {
                 />
               </div>
               <div
-                onClick={() => setCart([...cart, product])}
+                onClick={handleAddToCart}
                 className="mt-3 flex justify-between bg-brand-white p-4 shadow-2xl cursor-pointer"
               >
                 <p>Add To Cart</p>
