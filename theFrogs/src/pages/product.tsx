@@ -74,10 +74,13 @@ export const ProductPage = () => {
               <div>
                 {products
                   .filter((item) => {
-                    return (
-                      product.tags[0] === item.tags[0] && product.id !== item.id
+                    const notSameItem = product.id !== item.id;
+                    const hasMatchingTags = item.tags.some((tag) =>
+                      product.tags.includes(tag)
                     );
+                    return notSameItem && hasMatchingTags;
                   })
+                  .slice(0, 3)
                   .map((product) => (
                     <ProductCard product={product} cartItem={false} />
                   ))}

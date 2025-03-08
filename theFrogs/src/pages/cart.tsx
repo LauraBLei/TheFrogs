@@ -98,6 +98,7 @@ export const CartPage = () => {
 
                 return notInCart && hasMatchingTags;
               })
+              .slice(0, 4)
               .map((product) => (
                 <ProductCard product={product} cartItem={false} />
               ))}
