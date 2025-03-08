@@ -1,22 +1,8 @@
-import { ChevronDown, Files, Package, Truck } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 export const ContactPage = () => {
   return (
     <div className="w-full flex flex-col items-center h-screen">
-      <div className="flex w-full justify-evenly max-w-[1200px] mt-10">
-        <div className="bg-brand-black w-[265px] flex flex-col items-center justify-center p-8 shadow-2xl">
-          <Truck className="w-[89px] h-[89px] text-brand-white" />
-          <p className="text-brand-white text-xl ">Shipping & Delivery</p>
-        </div>
-        <div className="bg-brand-black w-[265px] flex flex-col items-center justify-center p-8 shadow-2xl">
-          <Files className="w-[89px] h-[89px] text-brand-white" />
-          <p className="text-brand-white text-xl ">Payment & Insurance</p>
-        </div>
-        <div className="bg-brand-black w-[265px] flex flex-col items-center justify-center p-8 shadow-2xl">
-          <Package className="w-[89px] h-[89px] text-brand-white" />
-          <p className="text-brand-white text-xl ">Return a product</p>
-        </div>
-      </div>
       <div className="mt-10 max-w-[1200px] w-full flex flex-col gap-8">
         <h1 className="text-center text-3xl border-b-2 py-4 border-brand-black font-bold text-brand-black">
           Contact
