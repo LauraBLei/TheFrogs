@@ -20,7 +20,7 @@ export const ProductPage = () => {
       setProduct(x);
     });
   }, []);
-  const handleAddToCart = (e: React.MouseEvent) => {
+  const handleAddToCart = () => {
     if (product) {
       const isProductInCart = cart.some((item) => item.id === product.id);
 
