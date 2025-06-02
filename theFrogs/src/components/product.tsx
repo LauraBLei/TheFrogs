@@ -10,6 +10,48 @@ interface ProductCardProps {
   cartItem: boolean;
 }
 
+/**
+ * Props for the ProductCard component.
+ *
+ * @property {Product} product - The product data to display in the card.
+ * @property {boolean} cartItem - Indicates if the product is already in the cart (true) or not (false).
+ */
+interface ProductCardProps {
+  product: Product;
+  cartItem: boolean;
+}
+
+/**
+ * A product card component that displays product details,
+ * including image, title, description, rating, and price.
+ *
+ * - Allows users to add the product to the cart if it's not already there.
+ * - If `cartItem` is true, shows a remove-from-cart button instead.
+ *
+ * @component
+ * @param {ProductCardProps} props - Props containing product info and cart status.
+ */
+
+/**
+ * Handles the "Add to Cart" button click.
+ * Prevents navigation and adds the product to the cart if not already present.
+ *
+ * @param {React.MouseEvent} e - The click event.
+const handleAddToCart = (e: React.MouseEvent): void => { ... }
+ */
+
+/**
+ * Handles the "Remove from Cart" button click.
+ * Prevents navigation and removes the product from the cart.
+ *
+ * @param {React.MouseEvent} e - The click event.
+ * @param {Product} productToRemove - The product to remove from the cart.
+const handleRemoveFromCart = (
+  e: React.MouseEvent,
+  productToRemove: Product
+): void => { ... }
+ */
+
 export const ProductCard: React.FC<ProductCardProps> = ({
   product,
   cartItem,
@@ -24,7 +66,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
     if (!isProductInCart) {
       setCart([...cart, product]);
-      console.log("Product added to cart:", product);
     } else {
       alert("Product is already in the cart");
     }

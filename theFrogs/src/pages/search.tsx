@@ -13,7 +13,11 @@ export const SearchPage = () => {
         {search.length > 0 ? (
           <>
             {search.map((product) => (
-              <ProductCard product={product} cartItem={false} />
+              <ProductCard
+                key={product.id}
+                product={product}
+                cartItem={false}
+              />
             ))}
           </>
         ) : (

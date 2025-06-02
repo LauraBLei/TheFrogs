@@ -3,6 +3,23 @@ import { ChangeEvent, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ProductsContext } from "../types/product";
 
+/**
+ * Header component for the application.
+ *
+ * Renders the navigation bar with logo, search input, cart icon, and page links.
+ * Integrates product filtering functionality based on user search input.
+ *
+ * @component
+ */
+
+/**
+ * Handles the product search input change event.
+ *
+ * Navigates to the search page and filters the product list
+ * by matching the search input against product tags, title, or description.
+ *
+ * @param {ChangeEvent<HTMLInputElement>} e - The input change event from the search field.
+ */
 export const Header = () => {
   const { cart, isOpen, setIsOpen, products, setSearch } =
     useContext(ProductsContext);
@@ -21,7 +38,6 @@ export const Header = () => {
     });
 
     setSearch(searchList);
-    console.log(searchList);
   };
   return (
     <header

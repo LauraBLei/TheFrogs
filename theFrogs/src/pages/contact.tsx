@@ -31,16 +31,18 @@ export const ContactPage = () => {
           >
             <form action="" className="flex flex-col p-4 w-full gap-4">
               <div>
-                <label htmlFor="">Name</label>
+                <label htmlFor="name">Name</label>
                 <input
+                  id="name"
                   className="border-2 p-2 w-full border-brand-black"
                   type="text"
                   placeholder="Insert your name here..."
                 />
               </div>
               <div>
-                <label htmlFor="">Email</label>
+                <label htmlFor="email">Email</label>
                 <input
+                  id="email"
                   className="border-2 p-2 w-full border-brand-black"
                   type="text"
                 />
@@ -48,13 +50,17 @@ export const ContactPage = () => {
               <div>
                 <label htmlFor="Subject">Subject</label>
                 <input
+                  id="subject"
                   className="border-2 p-2 w-full border-brand-black"
                   type="text"
                 />
               </div>
               <div>
-                <label htmlFor="">Description</label>
-                <textarea className="h-[200px] border-2 p-2 w-full border-brand-black"></textarea>
+                <label htmlFor="description">Description</label>
+                <textarea
+                  id="description"
+                  className="h-[200px] border-2 p-2 w-full border-brand-black"
+                ></textarea>
               </div>
               <button className="text-3xl" type="submit">
                 Send
