@@ -16,7 +16,7 @@ export const HomePage = () => {
       </div>
       <div className="flex md:justify-between flex-wrap w-full max-w-[1100px]">
         {products.map((product) => (
-          <ProductCard product={product} cartItem={false} />
+          <ProductCard key={product.id} product={product} cartItem={false} />
         ))}
       </div>
     </div>

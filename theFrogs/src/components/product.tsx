@@ -24,7 +24,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
     if (!isProductInCart) {
       setCart([...cart, product]);
-      console.log("Product added to cart:", product);
     } else {
       alert("Product is already in the cart");
     }

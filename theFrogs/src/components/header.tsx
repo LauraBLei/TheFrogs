@@ -21,7 +21,6 @@ export const Header = () => {
     });
 
     setSearch(searchList);
-    console.log(searchList);
   };
   return (
     <header

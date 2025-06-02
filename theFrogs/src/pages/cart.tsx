@@ -17,7 +17,11 @@ export const CartPage = () => {
               {cart.length > 0 ? (
                 <>
                   {cart.map((product) => (
-                    <ProductCard product={product} cartItem={true} />
+                    <ProductCard
+                      key={product.id}
+                      product={product}
+                      cartItem={true}
+                    />
                   ))}
                 </>
               ) : (
@@ -100,7 +104,11 @@ export const CartPage = () => {
               })
               .slice(0, 4)
               .map((product) => (
-                <ProductCard product={product} cartItem={false} />
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  cartItem={false}
+                />
               ))}
           </div>
         </div>

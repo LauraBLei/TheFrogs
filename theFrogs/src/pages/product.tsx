@@ -16,7 +16,6 @@ export const ProductPage = () => {
   useEffect(() => {
     const productId = searchParams.get("id") ?? "";
     readProduct(productId).then((x) => {
-      console.log(x);
       setProduct(x);
     });
   }, []);
@@ -26,7 +25,6 @@ export const ProductPage = () => {
 
       if (!isProductInCart) {
         setCart([...cart, product]);
-        console.log("Product added to cart:", product);
       } else {
         alert("Product is already in the cart");
       }
@@ -71,7 +69,7 @@ export const ProductPage = () => {
                 {product.reviews.length > 0 ? (
                   <>
                     {product.reviews.map((review) => (
-                      <ReviewComponent review={review} />
+                      <ReviewComponent key={product.id} review={review} />
                     ))}
                   </>
                 ) : (
@@ -81,7 +79,7 @@ export const ProductPage = () => {
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-4">
-                You might also like:{" "}
+                You might also like:
               </h3>
               <div>
                 {products
@@ -94,7 +92,11 @@ export const ProductPage = () => {
                   })
                   .slice(0, 3)
                   .map((product) => (
-                    <ProductCard product={product} cartItem={false} />
+                    <ProductCard
+                      key={product.id}
+                      product={product}
+                      cartItem={false}
+                    />
                   ))}
               </div>
             </div>
